@@ -1,0 +1,23 @@
+Parcial 2
+
+Se crea un clúster con Servicio de Kubernetes
+
+az account set --subscription 7b42bf26-f980-4ffc-932e-49e3e0e63670
+az aks get-credentials --resource-group aksParcial2 --name Vaneaks
+
+Grupo de registros
+
+az group create --name aksParcial2 --location uaenorth
+
+Activar el monitoreo de clúster:
+
+az provider show -n Microsoft.OperationsManagement -o table
+az provider show -n Microsoft.OperationalInsights -o table
+az provider register --namespace Microsoft.OperationsManagement
+az provider register --namespace Microsoft.OperationalInsights
+
+Conectar al clúster:
+
+az aks install-cli
+az aks get-credentials --resource-group aksParcial2 --name Vaneaks
+kubectl get nodes -o wide
