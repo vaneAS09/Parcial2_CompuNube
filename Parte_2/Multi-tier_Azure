@@ -20,3 +20,7 @@ Validación
 
 kubectl get pods -o wide
 kubectl get services -o wide
+
+Referencias:
+
+https://kubernetes.io/docs/tutorials/stateless-application/guestbook/#viewing-the-frontend-service-via-loadbalancer
