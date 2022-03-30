@@ -1,11 +1,19 @@
 Aplicación de su interés en Azure
 
+Instalación de kubectl Local en Windows
+
+curl -LO "https://dl.k8s.io/release/v1.23.0/bin/windows/amd64/kubectl.exe"
+
 mkdir Base_mongo
 cd Base_mongo
 kubectl apply -f mongo-secret.yaml
 kubectl apply -f mongo.yaml
 kubectl apply -f mongo-configmap.yaml 
 kubectl apply -f mongo-express.yaml
+
+Validación
+kubectl get pods
+kubectl get services
 
 Referencias:
 https://www.returngis.net/2020/05/aplicaciones-con-estado-en-kubernetes-con-statefulsets/
