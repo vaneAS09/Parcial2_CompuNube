@@ -3,11 +3,20 @@ Correr un servicio web multi tier
 mkdir parcial2
 cd parcial2
 
+Instalación kubectl local en windows
+
+curl -LO "https://dl.k8s.io/release/v1.23.0/bin/windows/amd64/kubectl.exe"
+
+Montar App
+
 kubectl apply -f redis-leader-deployment.yaml
 kubectl apply -f redis-leader-service.yaml
 kubectl apply -f redis-follower-deployment.yaml
 kubectl apply -f redis-follower-service.yaml
 kubectl apply -f frontend-deployment.yaml
 kubectl apply -f frontend-service.yaml
+
+Validación
+
 kubectl get pods -o wide
 kubectl get services -o wide
